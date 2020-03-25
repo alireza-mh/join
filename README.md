@@ -8,7 +8,7 @@ Proposed solution consists of 2 screen:
 1 is the applicant screen, where filling it in will send the data to the server and reflect it on
 2 applicant list screen, where all existing and new applicants can be viewed
 
-This app needs to display the list of applicants taken from this API: https://candidates.free.beeceptor.com/api/candidate
+This app needs to display the list of applicants taken from this API: GET https://candidates.free.beeceptor.com/api/candidate
 (If API is not available, use file located in this repository under /data/candidates.json) and load send a local request instead.
 
 ## Design
