@@ -33,7 +33,7 @@ As a Recruiter:
 ## Technical Notes
 Utilize localStorage for candidate data storage (as your backend) and merge it with existing API data.
 Though there's no restriction to backend technology and spinning up NodeJS server is allowed.
-If the external API is too slow, make sure it's not visible/filled by the user, find a way to make load/wait time a pleasure.
+If the external API is too slow, make sure it's not visible or felt by the user, find a way to make load/wait time a pleasure.
 
 ## Tech Stack
 Use ReactJS with TypeScript, test your code with a preferred library of your choice, also feel free to choose either unit tests or E2E tests with Cypress
