@@ -45,3 +45,7 @@ Linter, CSSinJS is a plus
 - Commit early and often. We want to be able to check your way of thinking
 - Make the app public. Deploy it using the service of your choice (ZEIT, Cloud Run, Heroku)
 - Create a pull request
+
+## Disclaimer
+You don't have to finish all of that, but we would really love to see a working piece.
+What's more important for us is to see your way of thinking and priority on tasks during implementation!
