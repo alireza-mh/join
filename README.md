@@ -48,6 +48,7 @@ If the external API is too slow, make sure it's not visible or felt by the user,
 - Commit early and often. We want to be able to check your way of thinking
 - Make the app public. Deploy it using the service of your choice (Vercel, Cloud Run, Heroku)
 - Create a pull request so we can review your code and comment on it
+- Do not spend more than 5 hours on the test, you will have a chance to submit fixes when our engineers review your code
 
 ## Disclaimer
 You don't have to finish all of that, but we would really love to see a working piece.
