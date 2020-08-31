@@ -35,11 +35,12 @@ There's no restriction to backend technology, you can e.g.:
 - utilize localStorage for candidate data storage (as your backend) and merge it with existing API data
 - spin up a NodeJS server
 
-If the external API is too slow, make sure it's not visible or felt by the user, find a way to make load/wait time a pleasure.
+If the external API is too slow, make sure it's not visible or felt by the user, find a way to make load/wait time a pleasure. Maybe kitten paws loader?
 
 ## Tech Stack
-Use ReactJS with TypeScript, test your code with a preferred library of your choice, also feel free to choose either unit tests or E2E tests with Cypress
-Linter, CSSinJS is a plus
+- Use ReactJS with TypeScript
+- Test your code with a preferred library of your choice (feel free to choose either unit tests or E2E tests with Cypress, *we prefer the latter*)
+- Linter, CSSinJS is a plus
 
 ## Instructions
 
