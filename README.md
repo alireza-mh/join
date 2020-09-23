@@ -44,11 +44,14 @@ If the external API is too slow, make sure it's not visible or felt by the user,
 
 ## Instructions
 
-- Fork this repo
+- Run `git init` in this test directory so you can commit your changes locally.
 - Commit early and often. We want to be able to check your way of thinking
-- Make the app public. Deploy it using the service of your choice (Vercel, Cloud Run, Heroku)
-- Create a pull request so we can review your code and comment on it
-- Do not spend more than 5 hours on the test, you will have a chance to submit fixes when our engineers review your code
+- Make the app public, but do not name it JOIN Test or anything like that, we want to avoid exposure 
+- Deploy it using the service of your choice (Vercel, Cloud Run, Heroku)
+- Zip your work from local folder without removing Git history and send us back via email for a review
+- Do not spend more than 4 hours on the test working proactively
+- Do not exceed a deadline of 12 hours from the moment you received it to sending it back to us
+- Communicate early and openly if there are issues, it will add points to your application
 
 ## Disclaimer
 You don't have to finish all of that, but we would really love to see a working piece.
