@@ -1,54 +1,66 @@
-# Candidate Application & Score Calculator
-![JOIN React Test](https://i.imgur.com/msT4Blg.png)
+# Recruiter Dashboard
+![JOIN React Test](./data/Candidate%20Board.png)
 
 ## Context
 
 We love to give visual feedback to the recruiters about where their candidate stand in their pipeline.
-Proposed solution consists of 2 screens:
-1. *The applicant screen* - filling it in will send the application to the server
-1. *The candidate list screen* - where all existing and new candidates can be viewed (reflecting input from the previous screen)
 
-This app needs to display the list of candidates taken from this API: GET https://candidates.free.beeceptor.com/api/candidate
-(If API is not available, use file located in this repository under /data/candidates.json) and send a local request instead.
+This app needs to display the list of candidates taken from this API:
+
+GET https://5f98ad0a50d84900163b7c41.mockapi.io/api/candidates
+
+**PAGINATION**
+
+Add query params to GET requests:
+`/candidates?page=1&limit=10`
+
+**FILTERING**
+
+Add query params to GET request:
+`/candidates?qualified=TRUE` - search qualified candidates
+
 
 ## Design
-Screens are provided in /data folder for reference, it doesn't have to look identical, just a visual reference, you can use Material or Bootstrap for UI components
+Screen is provided in /data folder for reference, it doesn't have to look identical, just a visual reference, you can use Material or Bootstrap for UI components
 
 ## Requirements
-As a Candidate:
-- [ ] I want to be able to provide my data in application form without any field being required
-- [ ] *[OPTIONAL]* I want to be able to upload my photo
 
 As a Recruiter:
 - [ ] I want to be able to view a list of my candidates
 - [ ] For each application calculate score:
-  - Up to 10% if full name provided
+  - 10% if full name provided
   - 10% if email provided
-  - 10% if password provided
+  - 10% if country provided
   - 20% if phone provided
-  - *[OPTIONAL]* 50% if image uploaded (calculate accordingly if implemented or not)
-- [ ] I want by clicking on the "..." menu, be able to "delete" the candidate (hide from display)
-- [ ] I want by clicking on the "..." menu, be able to change candidate state from "submitted" to "in review" to either "not a fit" or "hired"
-  
+  - 50% if avatar provided
+- [ ] I want by clicking on the "Qualified" button, be able to qualify the candidate (qualified: IN_REVIEW -> YES)
+- [ ] I want by clicking on the "Unqualified" button, be able to unqualify the candidate (qualified: IN_REVIEW -> FALSE)
+- [ ] I want by clicking on the "X" button, be able to change the state of the candidate to in review (qualified: YES -> IN_REVIEW or NO -> IN_REVIEW)
+- [ ] [OPTIONAL] I want to filter by qualified state
+- [ ] [OPTIONAL] I want to paginate
+
+
 ## Technical Notes
-There's no restriction to backend technology, you can e.g.:
-- utilize localStorage for candidate data storage (as your backend) and merge it with existing API data
-- spin up a NodeJS server
+The app base on create-react-app typescript template.
+
+Also, we added custom `.eslintrc.js` and `.prettierrc`. We are using exactly the same configs in our apps.
+
+Utilize localStorage for managing candidates qualified state and merge it with existing API data.
 
 If the external API is too slow, make sure it's not visible or felt by the user, find a way to make load/wait time a pleasure. Maybe kitten paws loader?
 
 ## Tech Stack
 - Use ReactJS with TypeScript
-- Test your code with a preferred library of your choice (feel free to choose either unit tests or E2E tests with Cypress, *we prefer the latter*)
-- Linter, CSSinJS is a plus
+- Test your code with unit test
+- CSSinJS is a plus
+- Take an advantage of using other libraries if you need so
 
 ## Instructions
 
 - Run `git init` in this test directory so you can commit your changes locally.
-- Commit early and often. We want to be able to check your way of thinking
-- Make the app public, but do not name it JOIN Test or anything like that, we want to avoid exposure 
-- Deploy it using the service of your choice (Vercel, Cloud Run, Heroku)
-- Zip your work from local folder without removing Git history and send us back via email for a review
+- Commit early and often. We want to be able to check your way of thinking.
+- Run command from package.json to start/test/lint your app
+- Zip your work from local folder without removing Git history, upload the file to, for example, google drive, and send us the link via email for a review
 - Do not spend more than 4 hours on the test working proactively
 - Do not exceed a deadline of 12 hours from the moment you received it to sending it back to us
 - Communicate early and openly if there are issues, it will add points to your application
