@@ -9,6 +9,8 @@ This app needs to display the list of candidates taken from this API:
 
 GET https://5f98ad0a50d84900163b7c41.mockapi.io/api/candidates
 
+A candidate entity could have one of `quilified` state: 'IN_REVIEW' | 'YES' | 'NO'
+
 **PAGINATION**
 
 Add query params to GET requests:
@@ -17,7 +19,7 @@ Add query params to GET requests:
 **FILTERING**
 
 Add query params to GET request:
-`/candidates?qualified=TRUE` - search qualified candidates
+`/candidates?qualified=YES` - search qualified candidates
 
 
 ## Design
