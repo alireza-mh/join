@@ -1,0 +1,18 @@
+$progress-size: 60px;
+.join-progress-circle-container{
+  display: flex;
+  align-items: center;
+  &__progress{
+    width: $progress-size;
+    height: $progress-size;
+  }
+  &__description{
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px;
+  }
+  &__title{
+    font-weight: 500;
+    color: grey;
+  }
+}

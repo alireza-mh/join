@@ -1,12 +1,14 @@
 import React from 'react'
 
-import Card from './Components/Card'
+import ReviewCandidates from './Routes/ReviewCandidates'
 import Layout from './Components/Layout'
+
 import './App.scss'
 
 const App = () => (
   <Layout>
-    <Card />
+    {/*  Best way is to implement this with react router but Maybe add if I could find time */}
+    <ReviewCandidates />
   </Layout>
 )
 

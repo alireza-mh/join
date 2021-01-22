@@ -1,37 +1,52 @@
 import React from 'react'
 import { default as MCard } from '@material-ui/core/Card'
+import IconButton from '@material-ui/core/IconButton'
+import ThumbUp from '@material-ui/icons/ThumbUp'
+import ThumbDown from '@material-ui/icons/ThumbDown'
 
 import ProgressCircle from '../ProgressCircle'
+import Avatar from '../Avatar'
 import './style.scss'
 
 /**
  * @interface  Component IProps
  */
 interface IProps extends React.HTMLProps<HTMLDivElement> {
-  name?: string
   avatarUrl?: string
-  progress?: string
+  progress?: number
+  userLocation?: string
+  userFullName: string
 }
 
 /**
  * @param props: IProps
  */
-const Card: React.FC<IProps> = (props: IProps) => (
-  <MCard className="join-card-container">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque commodi
-    dolorem qui. Aperiam eos facilis id laboriosam quidem tempore voluptatem. A
-    aliquid asperiores atque eaque explicabo magnam magni minus nam, nostrum,
-    perferendis, sapiente veniam voluptates voluptatum? Beatae laborum molestiae
-    odio possimus quo. Aperiam delectus dignissimos dolores facere fuga harum
-    impedit incidunt iusto, magnam magni molestias nemo, nihil qui quisquam rem
-    unde voluptates. Dignissimos dolore labore, laboriosam nemo porro quas quia
-    recusandae voluptate. Ab architecto eos, illum incidunt mollitia neque
-    provident quae sapiente sint veritatis. Adipisci dicta ea quo sapiente?
-    Consequatur cumque distinctio harum minus nam nemo repellat suscipit
-    temporibus voluptas.
-    {/*  Avoid Dead code script*/}
-    <ProgressCircle value={10} />
-  </MCard>
-)
+const Card: React.FC<IProps> = (props: IProps) => {
+  const { progress, avatarUrl, userFullName, userLocation } = props
+  return (
+    <MCard className="join-card-container">
+      <div className="join-card__applied-info">
+        <span>Applied on January 2021 for Role</span>
+      </div>
+      <div className="join-card-content">
+        <Avatar
+          wrapperClassName="join-card-content__avatar"
+          src={avatarUrl}
+          title={userFullName}
+          caption={userLocation}
+        />
+        {progress && <ProgressCircle value={progress} />}
+        <div className="join-card-content__actions">
+          <IconButton>
+            <ThumbUp style={{ color: 'green' }} />
+          </IconButton>
+          <IconButton>
+            <ThumbDown style={{ color: 'red' }} />
+          </IconButton>
+        </div>
+      </div>
+    </MCard>
+  )
+}
 
 export default Card

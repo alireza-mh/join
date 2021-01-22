@@ -1,0 +1,19 @@
+.join-avatar{
+  .join-avatar__meta-container{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    &_title{
+      font-size: 17px;
+      font-weight: 600;
+    }
+    &_caption{
+      font-size: 14px;
+      color: gray;
+    }
+  }
+
+  display: flex;
+  align-items: center;
+}
+

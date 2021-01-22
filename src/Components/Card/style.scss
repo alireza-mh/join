@@ -1,0 +1,20 @@
+.join-card-container{
+
+  .join-card__applied-info{
+    padding: 5px 16px;
+    color: gray;
+    border-bottom: 1px solid lightgrey;
+  }
+  .join-card-content{
+    display: flex;
+    padding: 16px;
+    &__avatar{
+      width: 50%;
+    }
+    &__actions{
+      margin-left: auto;
+    }
+  }
+}
+
+
