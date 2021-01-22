@@ -20,5 +20,28 @@
     }
   }
 }
-
+.join-card-content__actions{
+  button{
+    border-radius: 10px;
+  }
+}
+.join-card-content__actions_qualified{
+  border-radius: 10px;
+  span{
+    color: limegreen;
+    font-size: 14px;
+    margin-left: 5px;
+  }
+}
+.join-card-content__actions_not_qualified{
+  border-radius: 10px;
+  span{
+    color: red;
+    font-size: 14px;
+    margin-left: 5px;
+  }
+}
+.join-card-content__actions_cancel{
+  border-radius: 10px;
+}
 

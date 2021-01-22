@@ -3,7 +3,9 @@ import { default as MCard } from '@material-ui/core/Card'
 import IconButton from '@material-ui/core/IconButton'
 import ThumbUp from '@material-ui/icons/ThumbUp'
 import ThumbDown from '@material-ui/icons/ThumbDown'
+import Close from '@material-ui/icons/Close'
 
+import { Qualified } from '../../constants/enums'
 import ProgressCircle from '../ProgressCircle'
 import { primaryDateFormat } from '../../utils/dateFormat'
 import Avatar from '../Avatar'
@@ -21,6 +23,10 @@ interface IProps extends React.HTMLProps<HTMLDivElement> {
   wrapperClassName?: string
   creatAt?: string
   jobLocation?: string
+  candidateState?: CandidateType['qualified']
+  onQualify: () => void
+  onReject: () => void
+  onReview: () => void
 }
 
 /**
@@ -35,6 +41,10 @@ const Card: React.FC<IProps> = (props: IProps) => {
     jobTitle,
     jobLocation,
     creatAt,
+    candidateState,
+    onQualify,
+    onReject,
+    onReview,
     wrapperClassName = '',
   } = props
   return (
@@ -59,12 +69,34 @@ const Card: React.FC<IProps> = (props: IProps) => {
         />
         {progress && <ProgressCircle value={progress} />}
         <div className="join-card-content__actions">
-          <IconButton>
-            <ThumbUp style={{ color: 'green' }} />
-          </IconButton>
-          <IconButton>
-            <ThumbDown style={{ color: 'red' }} />
-          </IconButton>
+          {candidateState !== Qualified.NO && (
+            <IconButton
+              className="join-card-content__actions_qualified"
+              onClick={onQualify}
+            >
+              <ThumbUp style={{ color: 'green' }} />
+              {candidateState === Qualified.IN_REVIEW && <span>Qualified</span>}
+            </IconButton>
+          )}
+          {candidateState !== Qualified.YES && (
+            <IconButton
+              className="join-card-content__actions_not_qualified"
+              onClick={onReject}
+            >
+              <ThumbDown style={{ color: 'red' }} />
+              {candidateState === Qualified.IN_REVIEW && (
+                <span>Not qualified</span>
+              )}
+            </IconButton>
+          )}
+          {candidateState !== Qualified.IN_REVIEW && (
+            <IconButton
+              className="join-card-content__actions_cancel"
+              onClick={onReview}
+            >
+              <Close style={{ color: 'gray' }} />
+            </IconButton>
+          )}
         </div>
       </div>
     </MCard>

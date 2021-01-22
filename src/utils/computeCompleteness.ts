@@ -18,7 +18,7 @@ export const computeCompleteness = (user: any) => {
     result += 20
   }
   if (user.avatar) {
-    result += 20
+    result += 50
   }
   return result
 }
