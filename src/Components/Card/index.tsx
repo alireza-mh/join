@@ -5,6 +5,7 @@ import ThumbUp from '@material-ui/icons/ThumbUp'
 import ThumbDown from '@material-ui/icons/ThumbDown'
 
 import ProgressCircle from '../ProgressCircle'
+import { primaryDateFormat } from '../../utils/dateFormat'
 import Avatar from '../Avatar'
 import './style.scss'
 
@@ -16,17 +17,38 @@ interface IProps extends React.HTMLProps<HTMLDivElement> {
   progress?: number
   userLocation?: string
   userFullName: string
+  jobTitle?: string
+  wrapperClassName?: string
+  creatAt?: string
+  jobLocation?: string
 }
 
 /**
  * @param props: IProps
  */
 const Card: React.FC<IProps> = (props: IProps) => {
-  const { progress, avatarUrl, userFullName, userLocation } = props
+  const {
+    progress,
+    avatarUrl,
+    userFullName,
+    userLocation,
+    jobTitle,
+    jobLocation,
+    creatAt,
+    wrapperClassName = '',
+  } = props
   return (
-    <MCard className="join-card-container">
+    <MCard className={`join-card-container ${wrapperClassName}`}>
       <div className="join-card__applied-info">
-        <span>Applied on January 2021 for Role</span>
+        <span>
+          Applied on {creatAt && primaryDateFormat(creatAt)} for{' '}
+          {
+            <span className="join-card__applied-info_job-title">
+              {jobTitle}
+            </span>
+          }
+          {jobLocation && ` (${jobLocation})`}
+        </span>
       </div>
       <div className="join-card-content">
         <Avatar

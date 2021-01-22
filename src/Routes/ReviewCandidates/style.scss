@@ -1,0 +1,11 @@
+.join-review-candidates {
+  &__loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+  }
+  &__card{
+    margin-bottom: 20px;
+  }
+}

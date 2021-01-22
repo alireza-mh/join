@@ -4,6 +4,10 @@
     padding: 5px 16px;
     color: gray;
     border-bottom: 1px solid lightgrey;
+    &_job-title{
+      color: skyblue;
+      cursor: pointer;
+    }
   }
   .join-card-content{
     display: flex;
