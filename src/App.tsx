@@ -1,9 +1,13 @@
 import React from 'react'
 
+import Card from './Components/Card'
+import Layout from './Components/Layout'
+import './App.scss'
+
 const App = () => (
-  <div>
-    <p>Recruiter Dashboard</p>
-  </div>
+  <Layout>
+    <Card />
+  </Layout>
 )
 
 export default App
